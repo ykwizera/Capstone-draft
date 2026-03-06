@@ -16,18 +16,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # third party
+    
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
     'drf_spectacular',         
-    # our apps
     'users',
     'meters',
     'transactions',
     'notifications',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -111,3 +112,8 @@ SIMPLE_JWT = {
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = "IngufuPay <noreply@ingufupay.com>"
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]

@@ -1,0 +1,68 @@
+.token-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+  margin-bottom: 0.85rem;
+}
+
+.tc-meter {
+  font-size: 0.75rem;
+  color: var(--text3);
+  margin-bottom: 0.4rem;
+}
+
+.tc-token {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--surface);
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid var(--border2);
+  margin-bottom: 0.5rem;
+  gap: 0.75rem;
+}
+.tc-token-val {
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--text); letter-spacing: 0.06em;
+  word-break: break-all;
+}
+
+.tc-units {
+  font-size: 0.75rem;
+  color: var(--text2);
+  margin-bottom: 0.85rem;
+}
+
+.tc-guide {
+  font-size: 0.78rem;
+  color: var(--text2);
+  background: var(--warning-light);
+  border: 1px solid var(--warning);
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.6;
+}
+.tc-guide-title {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+  font-size: 0.78rem;
+}
+.tc-guide ol {
+  padding-left: 1.1rem;
+  margin: 0;
+}
+.tc-guide li { margin-bottom: 0.2rem; }
+.tc-guide strong { color: var(--text); }
+
+.tc-actions { display: flex; gap: 0.5rem; }
+
+.applied-badge {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--success);
+  background: var(--success-light);
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+}

@@ -1,0 +1,139 @@
+/* ── Skeleton ─────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg, var(--border) 25%, var(--border2) 50%, var(--border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  display: block;
+}
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Spin ─────────────────────────────────────── */
+.spin { animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Error banner ─────────────────────────────── */
+.dash-error {
+  display: flex; align-items: center; gap: 0.6rem;
+  background: var(--danger-light); color: var(--danger);
+  border: 1px solid var(--danger); border-radius: var(--radius);
+  padding: 0.75rem 1rem; font-size: 0.82rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Stat cards ───────────────────────────────── */
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.stat-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.stat-card:hover { transform: translateY(-2px); }
+.stat-top {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.stat-label { font-size: 0.75rem; font-weight: 500; color: var(--text3); }
+.stat-ico {
+  width: 34px; height: 34px; border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.stat-val {
+  font-size: 1.75rem; font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: -1px; color: var(--text); line-height: 1;
+}
+.stat-hint { font-size: 0.72rem; }
+
+/* ── Bottom grid ──────────────────────────────── */
+.dash-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+/* ── Chart ────────────────────────────────────── */
+.chart-card { padding: 1.5rem; }
+.chart-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.chart-title {
+  font-size: 0.85rem; font-weight: 600; color: var(--text);
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.chart-legend { font-size: 0.68rem; color: var(--text3); }
+
+.chart-wrap {
+  height: 160px;
+  display: flex; align-items: flex-end; gap: 8px;
+}
+.chart-skeleton {
+  height: 160px;
+  display: flex; align-items: flex-end; gap: 8px;
+}
+.chart-skeleton .skeleton { flex: 1; }
+
+.bar-group {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; gap: 4px;
+}
+.bar {
+  width: 100%; border-radius: 6px 6px 0 0;
+  background: linear-gradient(to top, var(--primary), #06b6d4);
+  transition: opacity 0.15s; cursor: pointer; min-height: 4px;
+}
+.bar:hover { opacity: 0.75; }
+.bar.bar-current {
+  background: linear-gradient(to top, #7c3aed, #a855f7);
+}
+.bar-label {
+  font-size: 0.62rem; color: var(--text3);
+  font-family: 'JetBrains Mono', monospace;
+}
+.bar-val {
+  font-size: 0.62rem; color: var(--text2);
+  font-family: 'JetBrains Mono', monospace; font-weight: 600;
+}
+
+/* ── Low balance panel ────────────────────────── */
+.low-bal-card { padding: 1.25rem; }
+.lbl-header {
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--warning); margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.lbl-empty {
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  font-size: 0.82rem; text-align: center; padding: 1.25rem 0;
+  color: var(--success);
+}
+.lbl-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.65rem 0; border-bottom: 1px solid var(--border);
+}
+.lbl-item:last-child { border-bottom: none; }
+.lbl-name { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+.lbl-num { font-size: 0.7rem; color: var(--text3); margin-top: 0.1rem; }
+.lbl-bal { font-size: 0.78rem; font-weight: 600; color: var(--danger); }
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 1024px) {
+  .dash-stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .dash-stats { grid-template-columns: repeat(2, 1fr); }
+  .dash-grid  { grid-template-columns: 1fr; }
+}
